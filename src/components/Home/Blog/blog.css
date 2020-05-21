@@ -1,0 +1,29 @@
+.blog-row {
+    margin: 2rem auto;
+    width: 90%;
+}
+
+.blog-row > a{
+    text-decoration: none;
+}
+
+.blog-desc {
+    width: 100%;
+    border: 1px solid var(--clr-text);
+    padding: 3rem 5rem;
+}
+
+.blog-link{
+   text-align: center;
+}
+
+.blog-date{
+    font-size: 1rem;
+    color: rgba(51, 51, 51, 0.75);
+}
+
+@media (min-width: 768px) {
+    .blog-row{
+        width: 50%;
+    }
+}

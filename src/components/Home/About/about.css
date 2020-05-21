@@ -1,0 +1,32 @@
+.center {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.img {
+    max-width: 50%;
+    clip-path: circle(48%);
+    text-align: center;
+    background-color: var(--clr-primary-2);
+    margin-bottom: 1rem;
+}
+
+
+
+.self-img {
+    width: 60%;
+    transform: translateY(10%);
+}
+
+.appear-self-img{
+    animation: appearSelfImg 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+@keyframes appearSelfImg{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(10%);
+    }
+}

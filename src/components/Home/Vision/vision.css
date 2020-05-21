@@ -1,0 +1,65 @@
+
+.vision {
+    position: relative;
+}
+
+.vision-para {
+    width: 85%;
+    padding: 5% 5%;
+    background-color: rgba(51, 49, 49, 0.8);
+    border-radius: 4px;
+    color: var(--clr-primary-3);
+}
+
+.rellax {
+    position: absolute;
+    z-index: -1;
+}
+
+#rellex-1 {
+    top: 10%;
+    left: 5%;
+    z-index: 2
+}
+
+#rellex-2 {
+    top: 15%;
+    right: 0%;
+    z-index: 2;
+}
+
+#rellex-3 {
+    bottom: 40%;
+    right: 0%
+}
+
+#rellex-4 {
+    top: 30%
+}
+
+@media (min-width: 768px) {
+
+    .vision-para {
+        width: 70%;
+    }
+
+    #rellex-1 {
+        top: 0%;
+        left: 15%;
+    }
+
+    #rellex-2 {
+        top: 10%;
+        right: 10%
+    }
+
+    #rellex-3 {
+        bottom: 20%;
+        right: 13%
+    }
+
+    #rellex-4 {
+        bottom: 10%;
+        left: 10%;
+    }
+}
