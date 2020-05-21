@@ -1,7 +1,5 @@
 import React from 'react'
 import './hero.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithubSquare, faLinkedin, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import { Icons } from '../../common/Icons'
 
 

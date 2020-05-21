@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithubSquare, faLinkedin, faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
 import Segment from 'segment-js'
 import './nav.css'
 import { Icons } from './Icons'
 
-export const Nav: React.FC<{}> = ({ }) => {
+export const Nav: React.FC<{}> = () => {
 
         useEffect(() => {
                 var upper = document.getElementById("upper-line"),
