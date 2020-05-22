@@ -3,7 +3,7 @@ import './vision.css'
 
 export const Vision: React.FC<{}> = () => {
     return (
-        <section className="vision">
+        <section className="home-vision">
             <h1 className="section-header">Vision</h1>
             <p className="center vision-para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Beatae explicabo,
             dolorem labore

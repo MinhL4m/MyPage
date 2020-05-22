@@ -20,7 +20,7 @@ export const AboutContainer: React.FC<{}> = () => {
             })
         }
         let observer = new IntersectionObserver(callback, options)
-        observer.observe(document.querySelector('.about') as Element)
+        observer.observe(document.querySelector('.home-about') as Element)
     }, [])
 
     return (

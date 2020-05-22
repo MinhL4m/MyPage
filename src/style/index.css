@@ -53,6 +53,7 @@ section {
 .col-3 {
     width: 95%;
     margin: 3rem 0;
+    float: left;
 }
 
 .hidden {
@@ -133,7 +134,7 @@ a:hover {
     }
 
     .col-3 {
-        width: 46%;
+        width: 30%;
         margin: 5rem 3.3% 3rem 0;
     }
 }

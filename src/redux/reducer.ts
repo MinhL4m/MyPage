@@ -1,7 +1,8 @@
 import {ACTION} from '../redux/action'
 
 const initState = {
-    homeBlogList: []
+    homeBlogList: [],
+    todoList:[]
 }
 
 interface ACTION_REDUCER{
@@ -15,6 +16,11 @@ function reducer(state = initState, action: ACTION_REDUCER){
             return{
                 ...state,
                 homeBlogList: action.payload.homeBlogList
+            }
+        case ACTION.TODO:
+            return{
+                ...state,
+                todoList: action.payload.todoList
             }
         default:
             return state

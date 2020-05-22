@@ -15,19 +15,19 @@ const tempData = [
         title: 'Redux 101',
         date:'20/May/2020',
         description: 'As an dummy like me, I take me some time to wrap my head around redux...',
-        url:'/asd'
+        id:'asd'
     },
     {
         title: 'Redux 101',
         date:'20/May/2020',
         description: 'As an dummy like me, I take me some time to wrap my head around redux...',
-        url:'/asd'
+        id:'asd'
     },
     {
         title: 'Redux 101',
         date:'20/May/2020',
         description: 'As an dummy like me, I take me some time to wrap my head around redux...',
-        url:'/asd'
+        id:'asd'
     },
 ]
 
@@ -58,7 +58,6 @@ const BlogLogic: React.FC<{ homeBlogList: any, addHomeBlog: any }> = ({ homeBlog
     const [error, setError] = useState(false)
 
     // useEffect(() => {
-    //     console.log(homeBlogList)
     //     if (homeBlogList.length === 0) {
     //         getBlogs(setError, addHomeBlog)
     //     }

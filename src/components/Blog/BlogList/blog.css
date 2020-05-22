@@ -1,0 +1,38 @@
+.todo-list{
+    display: none;
+}
+
+.blog-list{
+    width:100%
+}
+
+@media (min-width: 768px) {
+    .blog .todo-list{
+        display: inline-block;
+        margin: 0 3.3% 0 0;
+    }
+
+    .col-9{
+        float: left;
+        width: 60%;
+    }
+
+    .todo-list{
+        width: 35%;
+        margin: 5rem 1% 3rem 0
+    }
+
+
+    .blog-row {
+        width: 50%;
+    }
+
+    .blog .blog-page-row{
+        width: 100%;
+    }
+
+    .todo-list .todo{
+        margin: 1rem 0;
+        
+    }
+}

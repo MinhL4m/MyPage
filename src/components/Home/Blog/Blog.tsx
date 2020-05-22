@@ -9,22 +9,20 @@ interface HomeBlog {
         title: string,
         date: string,
         description: string,
-        url: string
+        id: string
 }
 
 
 export const Blog: React.FC<BlogProps> = ({ homeBlogList, error }) => {
-        React.useEffect(() => {
-                console.log(homeBlogList)
-        })
+
         return (
 
-                (<section className="blog">
+                (<section className="home-blog">
                         <h1 className="section-header">Blog</h1>
                         {!error ?
                                 <>
                                         {homeBlogList.map(homeBlog => {
-                                                return <BlogCard {...homeBlog} key={homeBlog.url} />
+                                                return <BlogCard className="blog-row" {...homeBlog} key={homeBlog.id} />
                                         })}
                                         <div style={{ 'textAlign': 'center' }}>
                                                 <a href="/blog">Want To Read More?</a>
