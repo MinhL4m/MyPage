@@ -66,7 +66,7 @@ const BlogLogic: React.FC<{todoList:any, addTodo:any}> = ({todoList,addTodo}) =>
         return (
         <div className="blog row">
                 <Todo todoList={[]}/>
-                <Blog error={false} homeBlogList={tempData}/>
+                <Blog error={false} blogList={tempData}/>
         </div>
         );
 }
