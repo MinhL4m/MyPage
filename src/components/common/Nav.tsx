@@ -61,20 +61,20 @@ export const Nav: React.FC<{}> = () => {
                                                 </div>
                                         </div >
                                         <ul className="nav-links">
-                                                <a href="#">Home</a>
-                                                <a href="#">About</a>
-                                                <a href="#">Project</a>
-                                                <a href="#">Blog</a>
+                                                <a href="/">Home</a>
+                                                <a href="/#about">About</a>
+                                                <a href="/porfolio">Porfolio</a>
+                                                <a href="/blog">Blog</a>
                                         </ul>
                                 </div >
                         </nav >
                         <aside className="sidebar">
                                 <div>
                                         <ul className="links">
-                                                <li><a href="#">Home</a></li>
-                                                <li><a href="#">About</a></li>
-                                                <li><a href="#">Project</a></li>
-                                                <li><a href="#">Blog</a></li>
+                                                <a href="/">Home</a>
+                                                <a href="/#about">About</a>
+                                                <a href="/porfolio">Porfolio</a>
+                                                <a href="/blog">Blog</a>
                                         </ul>
                                         <Icons className="icons" />
                                 </div>
