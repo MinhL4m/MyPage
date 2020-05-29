@@ -1,6 +1,6 @@
 import React from 'react'
 import './hero.css'
-import { Icons } from '../../common/Icons'
+import { Icons } from '../../common/Icon/Icons'
 
 
 export const Hero: React.FC<{}> = () => {
