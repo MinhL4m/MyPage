@@ -1,25 +1,24 @@
 import React from 'react'
-import { BlogCard } from '../../common/BlogCard'
+import { BlogCard } from '../../common/blogCard/BlogCard'
 interface BlogProps {
         homeBlogList: Array<HomeBlog>,
-        error: boolean
 }
 
 interface HomeBlog {
         title: string,
         date: string,
-        description: string,
+        content: string,
         id: string
 }
 
 
-export const Blog: React.FC<BlogProps> = ({ homeBlogList, error }) => {
+export const Blog: React.FC<BlogProps> = ({ homeBlogList}) => {
 
         return (
 
                 (<section className="home-blog">
                         <h1 className="section-header">Blog</h1>
-                        {!error ?
+                        {homeBlogList.length < 1 ?
                                 <>
                                         {homeBlogList.map(homeBlog => {
                                                 return <BlogCard className="blog-row" {...homeBlog} key={homeBlog.id} />
