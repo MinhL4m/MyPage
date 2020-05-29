@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Segment from 'segment-js'
 import './nav.css'
-import { Icons } from './Icons'
+import { Icons } from '../Icon/Icons'
 
 export const Nav: React.FC<{}> = () => {
 

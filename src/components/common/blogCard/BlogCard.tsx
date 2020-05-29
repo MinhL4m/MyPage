@@ -3,19 +3,19 @@ import './blogCard.css'
 interface HomeBlog {
     title: string,
     date: string,
-    description: string,
+    content: string,
     id: string,
     className:string
 }
 
 
-export const BlogCard: React.FC<HomeBlog> = ({ title, date, description, id,className }) => {
+export const BlogCard: React.FC<HomeBlog> = ({ title, date, content, id,className }) => {
     return (
             <div className={className}>
                     <a href={`/${id}`}>
                             <div className="blog-desc">
                                     <h2>{title}</h2>
-                                    <p>{description}</p>
+                                    <p>{content.slice(0,20)+'...'}</p>
                                     <p className="blog-date">{date}</p>
                             </div>
                     </a>
