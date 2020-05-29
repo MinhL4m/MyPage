@@ -1,6 +1,5 @@
 const initState = {
-    blogs:[],
-    blog:{}
+    blogs:[]
 }
 
 export default (state = initState, action: any)=>{
@@ -9,11 +8,6 @@ export default (state = initState, action: any)=>{
             return{
                 ...state,
                 blogs: action.payload.blogs
-            }
-        case 'VIEW_BLOG':
-            return{
-                ...state,
-                blog: action.payload.blog
             }
         default:
             return state

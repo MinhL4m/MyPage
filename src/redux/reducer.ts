@@ -1,30 +1,11 @@
-import {ACTION} from '../redux/action'
+import {combineReducers} from 'redux'
 
-const initState = {
-    homeBlogList: [],
-    todoList:[]
-}
+import authUser from './reducer/authUser'
+import blog from './reducer/blog'
+import todo from './reducer/todo'
 
-interface ACTION_REDUCER{
-    type: string,
-    payload:any
-}
-
-function reducer(state = initState, action: ACTION_REDUCER){
-    switch(action.type){
-        case ACTION.HOME_BLOG:
-            return{
-                ...state,
-                homeBlogList: action.payload.homeBlogList
-            }
-        case ACTION.TODO:
-            return{
-                ...state,
-                todoList: action.payload.todoList
-            }
-        default:
-            return state
-    }
-}
-
-export default reducer
+export default combineReducers({
+    authUser,
+    blog,
+    todo
+})

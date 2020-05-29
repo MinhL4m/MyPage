@@ -4,10 +4,12 @@ const initState = {
 
 export default (state = initState, action: any)=>{
     switch(action.type){
-        case 'VIEW_TODO':
+        case 'LOAD_TODO':
             return {
                 ...state,
                 todos: action.payload.todos
             }
+        default:
+            return state
     }
 }
