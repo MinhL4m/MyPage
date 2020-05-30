@@ -7,15 +7,12 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-import Firebase, { FirebaseContext } from './firebase/index';
 
 ReactDOM.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Provider store={store}>
-				<FirebaseContext.Provider  value={}>
-					<App />
-				</FirebaseContext.Provider>
+				<App />
 			</Provider>
 		</BrowserRouter>
 	</React.StrictMode>,
