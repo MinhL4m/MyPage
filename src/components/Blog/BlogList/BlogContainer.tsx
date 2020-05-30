@@ -1,38 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { addTodo, loadTodo, loadBlogs } from '../../../redux/action/action';
+import { loadTodo, loadBlogs } from '../../../redux/action/action';
 import { Todo } from './Todo';
 import { Blog } from './Blog';
-
-const tempData = [
-	{
-		title: 'Redux 101',
-		date: '20/May/2020',
-		content: 'As an dummy like me, I take me some time to wrap my head around redux...',
-		id: 'asd'
-	},
-	{
-		title: 'Redux 101',
-		date: '20/May/2020',
-		content: 'As an dummy like me, I take me some time to wrap my head around redux...',
-		id: 'asd'
-	},
-	{
-		title: 'Redux 101',
-		date: '20/May/2020',
-		content: 'As an dummy like me, I take me some time to wrap my head around redux...',
-		id: 'asd'
-	}
-];
-
-const tempTodo = [
-	{
-		todo: 'Clear feature a'
-	},
-	{
-		todo: 'Refractor feature b'
-	}
-];
 
 interface Todo {
 	todo: string;
@@ -47,18 +17,25 @@ interface Blog {
 
 function mapStateToProps(state: any) {
 	return {
-		todoList: state.todoList,
-		blogs: state.blogs
+		todos: state.todo.todos,
+		blogs: state.blog.blogs
 	};
 }
 
-const BlogLogic: React.FC<{ todoList: any; blogs: any; addTodo: any }> = ({ todoList, blogs, addTodo }) => {
-	useEffect(() => {}, []);
+const BlogLogic: React.FC<{ todos: any, blogs: any, loadTodo:any, loadBlogs:any }> = ({todos, blogs, loadTodo, loadBlogs}) => {
+	useEffect(() => {
+		if(todos?.length === 0){
+			loadTodo()
+		}
+		if(blogs?.length === 0){
+			loadBlogs()
+		}
+	}, []);
 
 	return (
 		<div className="blog row">
-			<Todo todoList={[]} />
-			<Blog blogList={tempData} />
+			<Todo todoList={todos} />
+			<Blog blogList={blogs} />
 		</div>
 	);
 };
