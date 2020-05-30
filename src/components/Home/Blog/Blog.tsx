@@ -18,7 +18,7 @@ export const Blog: React.FC<BlogProps> = ({ homeBlogList}) => {
 
                 (<section className="home-blog">
                         <h1 className="section-header">Blog</h1>
-                        {homeBlogList.length < 1 ?
+                        {homeBlogList.length > 0 ?
                                 <>
                                         {homeBlogList.map(homeBlog => {
                                                 return <BlogCard className="blog-row" {...homeBlog} key={homeBlog.id} />
