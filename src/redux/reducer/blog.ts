@@ -1,5 +1,5 @@
 const initState = {
-    blogs:[]
+    blogs:[] as Array<any>
 }
 
 export default (state = initState, action: any)=>{

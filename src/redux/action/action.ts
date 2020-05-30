@@ -1,31 +1,28 @@
-import axios from 'axios';
+import { todoRef, blogRef, authRef } from '../../firebase/firebase';
 
-const url = process.env.NODE_ENV === 'production' ? '/api/' : 'http://localhost:4000/api/';
 export function loadBlogs() {
 	return (dispatch: any) => {
-		axios
-			.get(`${url}blogs`)
-			.then((res) => {
-				let data = res.data;
-				dispatch({ type: 'LOAD_BLOG', payload: { blogs: data } });
-			})
-			.catch((error) => {
-				console.error(error);
+		blogRef.get().then((snapshot) => {
+			let docs = [] as Array<any>;
+			snapshot.forEach((doc) => {
+				docs.push({id: doc.id,...doc.data()});
 			});
+			
+			dispatch({ type: 'LOAD_BLOG', payload: { blogs: docs } });
+		});
 	};
 }
 
-export function loadTodo(firebase: ) {
+export function loadTodo() {
 	return (dispatch: any) => {
-		axios
-			.get(`${url}todo`)
-			.then((res) => {
-				let data = res.data;
-				dispatch({ type: 'LOAD_TODO', payload: { todo: data } });
-			})
-			.catch((error) => {
-				console.error(error);
+		todoRef.get().then((snapshot) => {
+			let docs = [] as Array<any>;
+			snapshot.forEach((doc) => {
+				docs.push(doc.data());
 			});
+			
+			dispatch({ type: 'LOAD_TODO', payload: { todos: docs } });
+		});
 	};
 }
 

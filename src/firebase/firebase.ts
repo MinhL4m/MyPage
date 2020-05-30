@@ -1,4 +1,4 @@
-import app from 'firebase/app'
+import * as firebase from 'firebase'
 
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -11,10 +11,10 @@ const config = {
     measurementId: process.env.REACT_APP_MEASUREMENT_ID
 }
 
-class Firebase{
-    constructor(){
-        app.initializeApp(config)
-    }
-}
+firebase.initializeApp(config)
 
-export default Firebase
+const db = firebase.firestore()
+
+export const todoRef = db.collection('todo')
+export const blogRef = db.collection('blog')
+export const authRef = firebase.auth()
