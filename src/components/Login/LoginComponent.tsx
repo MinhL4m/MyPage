@@ -18,19 +18,12 @@ function mapDispatchToProps(dispatch: any) {
 	};
 }
 
-function testing(state:any){
-    return{
-        isAuth: state
-    }
-}
 
-
-const LoginComponent: React.FC<LoginComponentProps> = ({ dispatchSignIn, history, isAuth }) => {
+const LoginComponent: React.FC<LoginComponentProps> = ({ dispatchSignIn, history }) => {
 	const [ email, setEmail ] = React.useState('');
 	const [ password, setPassword ] = React.useState('');
 	const [ error, setError ] = React.useState('');
 
-    console.log(isAuth)
     /**
      * function for signin admin view
      * @param ev event
@@ -59,4 +52,4 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ dispatchSignIn, history
 	);
 };
 
-export default connect(testing, mapDispatchToProps)(withRouter(LoginComponent));
+export default connect(null, mapDispatchToProps)(withRouter(LoginComponent));
