@@ -6,7 +6,7 @@ import { PorfolioContainer } from './components/Porfolio/PorfolioContainer';
 import { Nav } from './components/common/Nav/Nav';
 import { Footer } from './components/common/Footer/Footer';
 import { BlogContainer } from './components/Blog/BlogList/BlogContainer';
-import { BlogArticle } from './components/Blog/BlogArticle/BlogArticle';
+import { BlogArticleContainer } from './components/Blog/BlogArticle/BlogArticleContainer';
 import Login from './components/Login/LoginComponent';
 
 import { authRef } from './firebase/firebase';
@@ -30,12 +30,6 @@ function App(props: any) {
 		<div className="App">
 			<Nav />
 			<Switch>
-				<Route path="/">
-					<Login />
-				</Route>
-			</Switch>
-
-			{/* <Switch>
 				<Route exact path="/">
 					<Home />
 				</Route>
@@ -45,7 +39,11 @@ function App(props: any) {
 				<Route exact path="/blog">
 					<BlogContainer />
 				</Route>
-			</Switch> */}
+				<Route exact path ="/blog/:id" children={<BlogArticleContainer/>}></Route>
+				<Route path="/login">
+					<Login />
+				</Route>
+			</Switch>
 			<Footer />
 		</div>
 	);
