@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import './blogCard.css'
 interface HomeBlog {
     title: string,
@@ -13,13 +14,13 @@ export const BlogCard: React.FC<HomeBlog> = ({ title, date, content, id,classNam
 
     return (
             <div className={className}>
-                    <a href={`/${id}`}>
+                    <Link to={`/blog/${id}`}>
                             <div className="blog-desc">
                                     <h2>{title}</h2>
                                     <p>{content.slice(0,90)+'...'}</p>
                                     <p className="blog-date">{date.toDate().toDateString()}</p>
                             </div>
-                    </a>
+                    </Link>
             </div>
     )
 }
