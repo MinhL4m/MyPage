@@ -16,7 +16,7 @@ export const Todo: React.FC<TodoProps> = ({ todoList }) => {
                         {todoList.length>0?
                                 todoList.map((todo) => {
                                         return (
-                                                <div className="todo">
+                                                <div key={todo.todo} className="todo">
                                                         <p>- {todo.todo}</p>
                                                 </div>
                                         )

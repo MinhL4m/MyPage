@@ -1,4 +1,4 @@
-import { todoRef, blogRef, authRef } from '../../firebase/firebase';
+import { todoRef, blogRef } from '../../firebase/firebase';
 
 export function loadBlogs() {
 	return (dispatch: any) => {
