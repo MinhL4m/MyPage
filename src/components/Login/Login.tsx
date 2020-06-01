@@ -4,7 +4,7 @@ import './login.css';
 interface LoginProps {
 	emailOnChange: (ev: any) => void;
 	passwordOnChange: (ev: any) => void;
-	signIn: (ev: any) => void;
+	logIn: (ev: any) => void;
 	error: string;
 }
 
@@ -20,7 +20,15 @@ function onInputBlur(ev: any) {
 	}
 }
 
-export const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, signIn, error }) => {
+function areEqual(prevProps: any, nextProps: any) {
+	let isEmailOnChangeSame = prevProps.emailOnChange.name === nextProps.emailOnChange.name;
+	let isPasswordOnChangeSame = prevProps.passwordOnChange.name === nextProps.passwordOnChange.name;
+	let isLoginSame = prevProps.logIn.name === nextProps.logIn.name;
+	let isErrorSame = prevProps.error === nextProps.error;
+	return isEmailOnChangeSame && isPasswordOnChangeSame && isLoginSame && isErrorSame;
+}
+
+const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, logIn, error }) => {
 	React.useEffect(() => {
 		[].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl: HTMLElement) {
 			inputEl.addEventListener('focus', onInputFocus);
@@ -79,11 +87,13 @@ export const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, s
 						<path d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0" />
 					</svg>
 				</span>
-				<p className="login-error">{error ? error : String.fromCharCode(173)}</p>
-				<button type="submit" className="login-btn" onClick={signIn}>
+				<p className="login-error">{error ? error : String.fromCharCode(8201)}</p>
+				<button type="submit" className="login-btn" onClick={logIn}>
 					Sign In
 				</button>
 			</form>
 		</div>
 	);
 };
+
+export default React.memo(Login, areEqual);
