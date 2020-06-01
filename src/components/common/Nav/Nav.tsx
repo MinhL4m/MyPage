@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Segment from 'segment-js'
 import './nav.css'
 import { Icons } from '../Icon/Icons'
+import {Link} from 'react-router-dom'
 
 export const Nav: React.FC<{}> = () => {
 
@@ -37,6 +38,26 @@ export const Nav: React.FC<{}> = () => {
                                 segmentMid.draw("0%", "100%", .5)
                         }
                 })
+
+                document.querySelector('.sidebar')?.addEventListener('click',(ev: any)=>{
+                        if(ev.target.nodeName === 'A'){
+                                isToggle = !isToggle
+                                aside?.classList.remove('sidebar-show')
+                                segmentUpper.draw("0", "28.5%", .5)
+                                segmentLower.draw("0", "28.5%", .5)
+                                segmentMid.draw("0%", "100%", .5)
+                        }
+                })
+
+                window.addEventListener('resize',()=>{
+                        if(window.innerWidth >= 768 && isToggle){
+                                console.log(aside)
+                                aside?.classList.remove('sidebar-show')
+                                segmentUpper.draw("0", "28.5%", .5)
+                                segmentLower.draw("0", "28.5%", .5)
+                                segmentMid.draw("0%", "100%", .5)
+                        }
+                })
         }, [])
 
         return (
@@ -61,21 +82,19 @@ export const Nav: React.FC<{}> = () => {
                                                 </div>
                                         </div >
                                         <ul className="nav-links">
-                                                <a href="/">Home</a>
-                                                <a href="/#about">About</a>
-                                                <a href="/porfolio">Porfolio</a>
-                                                <a href="/blog">Blog</a>
+                                                <Link to="/">Home</Link>
+                                                <Link to="/porfolio">Porfolio</Link>
+                                                <Link to="/blog">Blog</Link>
                                         </ul>
                                 </div >
                         </nav >
                         <aside className="sidebar">
                                 <div>
-                                        <ul className="links">
-                                                <a href="/">Home</a>
-                                                <a href="/#about">About</a>
-                                                <a href="/porfolio">Porfolio</a>
-                                                <a href="/blog">Blog</a>
-                                        </ul>
+                                        <div className="links">
+                                                <Link to="/">Home</Link>
+                                                <Link to="/porfolio">Porfolio</Link>
+                                                <Link to="/blog">Blog</Link>
+                                        </div>
                                         <Icons className="icons" />
                                 </div>
                         </aside>
