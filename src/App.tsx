@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import { Home } from './components/Home/Home';
 import { PorfolioContainer } from './components/Porfolio/PorfolioContainer';
-import { Nav } from './components/common/Nav/Nav';
+import Nav from './components/common/Nav/Nav';
 import { Footer } from './components/common/Footer/Footer';
 import { BlogContainer } from './components/Blog/BlogList/BlogContainer';
 import { BlogArticleContainer } from './components/Blog/BlogArticle/BlogArticleContainer';
@@ -24,6 +24,7 @@ function App(props: any) {
 			if (user) {
 				props.dispatchSignIn();
 			}
+			document.querySelector('.App')?.classList.add('render')
 		});
 	}, []);
 
