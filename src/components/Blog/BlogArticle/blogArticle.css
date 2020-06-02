@@ -1,7 +1,7 @@
 .article {
     margin: 0 auto;
     width: 90%;
-    min-height: calc(100% - 12rem);
+    min-height: calc(100vh - 12rem);
 }
 
 .article>h1 {
