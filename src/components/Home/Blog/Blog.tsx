@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import { BlogCard } from '../../common/blogCard/BlogCard'
 interface BlogProps {
         homeBlogList: Array<HomeBlog>,
@@ -24,11 +25,11 @@ export const Blog: React.FC<BlogProps> = ({ homeBlogList}) => {
                                                 return <BlogCard className="blog-row" {...homeBlog} key={homeBlog.id} />
                                         })}
                                         <div style={{ 'textAlign': 'center' }}>
-                                                <a href="/blog">Want To Read More?</a>
+                                                <Link to="/blog">Want To Read More?</Link>
                                         </div>
                                 </> :
                                 (<div style={{ 'textAlign': 'center' }}>
-                                        <a href="/blog">Something went wrong here! However, you still can go to blog page by click me.</a>
+                                        <Link to="/blog">Something went wrong here! However, you still can go to blog page by click me.</Link>
                                 </div>)
                         }
                 </section>)
