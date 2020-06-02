@@ -108,6 +108,17 @@
         blinkTextCursor 550ms steps(7) infinite normal;
 }
 
+.logout-btn{
+    color: var(--clr-primary-3);
+    background-color: var(--clr-primary-1);
+    border: none;
+    padding: 0.5rem 0.6rem;
+}
+
+.logout-btn:active{
+    background-color: var(--clr-primary-2);
+}
+
 @keyframes typewriter {
     from {
         width: 0;
