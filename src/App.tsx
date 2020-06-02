@@ -10,6 +10,7 @@ import { BlogArticleContainer } from './components/Blog/BlogArticle/BlogArticleC
 import Login from './components/Login/LoginComponent';
 
 import { authRef } from './firebase/firebase';
+import NotLoginRoute from './components/common/PrivateRoute/NotLoginRoute';
 
 function mapDispatchToProps(dispatch: any) {
 	return {
@@ -40,9 +41,7 @@ function App(props: any) {
 					<BlogContainer />
 				</Route>
 				<Route exact path ="/blog/:id" children={<BlogArticleContainer/>}></Route>
-				<Route path="/login">
-					<Login />
-				</Route>
+				<NotLoginRoute Component={Login} path="/login"/>
 			</Switch>
 			<Footer />
 		</div>
