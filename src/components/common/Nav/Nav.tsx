@@ -2,9 +2,23 @@ import React, { useEffect } from 'react'
 import Segment from 'segment-js'
 import './nav.css'
 import { Icons } from '../Icon/Icons'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+import { connect } from 'react-redux';
+import {authRef} from '../../../firebase/firebase'
 
-export const Nav: React.FC<{}> = () => {
+function mapStateToProps(state: any) {
+	return {
+		isAuth: state.authUser.isAuth
+	};
+}
+
+function mapDispatchToProps(dispatch: any) {
+	return {
+		dispatchLogOut: () => dispatch({ type: 'LOGOUT' })
+	};
+}
+
+const Nav: React.FC<{isAuth: boolean, history: any, dispatchLogOut: ()=>void}> = ({isAuth, history, dispatchLogOut}) => {
 
         useEffect(() => {
                 var upper = document.getElementById("upper-line"),
@@ -60,6 +74,16 @@ export const Nav: React.FC<{}> = () => {
                 })
         }, [])
 
+        function logout(){
+                // console.log(history)
+                authRef.signOut().then(function(){
+                        dispatchLogOut()
+                        history.push('/')
+                }).catch(function (error){
+                        console.log(error)
+                })
+        }
+
         return (
                 <>
                         <nav className="nav">
@@ -81,11 +105,12 @@ export const Nav: React.FC<{}> = () => {
                                                         </svg>
                                                 </div>
                                         </div >
-                                        <ul className="nav-links">
+                                        <div className="nav-links">
                                                 <Link to="/">Home</Link>
                                                 <Link to="/porfolio">Porfolio</Link>
                                                 <Link to="/blog">Blog</Link>
-                                        </ul>
+                                                {isAuth?<button className="logout-btn"onClick={logout}>Login</button>:''}
+                                        </div>
                                 </div >
                         </nav >
                         <aside className="sidebar">
@@ -94,6 +119,7 @@ export const Nav: React.FC<{}> = () => {
                                                 <Link to="/">Home</Link>
                                                 <Link to="/porfolio">Porfolio</Link>
                                                 <Link to="/blog">Blog</Link>
+                                                {isAuth?<button className="logout-btn"onClick={logout}>Login</button>:''}
                                         </div>
                                         <Icons className="icons" />
                                 </div>
@@ -101,3 +127,5 @@ export const Nav: React.FC<{}> = () => {
                 </>
         );
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Nav))
