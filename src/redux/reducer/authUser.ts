@@ -6,7 +6,7 @@ export default (state = initState, action: any) => {
     switch (action.type) {
         case 'LOGIN':
             return { isAuth: true  }
-        case 'SIGN_OUT':
+        case 'LOGOUT':
             return {isAuth: false}
         default:
             return state

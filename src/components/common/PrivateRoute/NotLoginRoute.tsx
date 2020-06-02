@@ -22,7 +22,7 @@ const NotLoginRoute: React.FC<NotLoginRouteProps> = ({ isAuth, Component, path }
 	return (
 		<Route
 			path={path}
-			render={(props: any) => (!isAuth ? <Component {...props} /> : <Redirect to="/dashboard" />)}
+			render={(props: any) => (!isAuth ? <Component {...props} /> : <Redirect to="/admin" />)}
 		/>
 	);
 };
