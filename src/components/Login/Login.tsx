@@ -9,13 +9,6 @@ interface LoginProps {
 	error: string;
 }
 
-function areEqual(prevProps: any, nextProps: any) {
-	let isEmailOnChangeSame = prevProps.emailOnChange.name === nextProps.emailOnChange.name;
-	let isPasswordOnChangeSame = prevProps.passwordOnChange.name === nextProps.passwordOnChange.name;
-	let isLoginSame = prevProps.logIn.name === nextProps.logIn.name;
-	let isErrorSame = prevProps.error === nextProps.error;
-	return isEmailOnChangeSame && isPasswordOnChangeSame && isLoginSame && isErrorSame;
-}
 
 const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, logIn, error }) => {
 	return (
@@ -39,4 +32,4 @@ const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, logIn, e
 	);
 };
 
-export default React.memo(Login, areEqual);
+export default Login;
