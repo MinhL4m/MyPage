@@ -8,9 +8,11 @@ import { Footer } from './components/common/Footer/Footer';
 import { BlogContainer } from './components/Blog/BlogList/BlogContainer';
 import { BlogArticleContainer } from './components/Blog/BlogArticle/BlogArticleContainer';
 import Login from './components/Login/LoginComponent';
+import {Admin} from './components/Admin/Admin'
 
 import { authRef } from './firebase/firebase';
 import NotLoginRoute from './components/common/PrivateRoute/NotLoginRoute';
+import LoginedRoute from './components/common/PrivateRoute/LoginedRoute';
 
 function mapDispatchToProps(dispatch: any) {
 	return {
@@ -43,6 +45,7 @@ function App(props: any) {
 				</Route>
 				<Route exact path ="/blog/:id" children={<BlogArticleContainer/>}></Route>
 				<NotLoginRoute Component={Login} path="/login"/>
+				<LoginedRoute Component={Admin} path="/admin"/>
 			</Switch>
 			<Footer />
 		</div>
