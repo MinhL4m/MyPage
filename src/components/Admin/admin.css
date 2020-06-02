@@ -1,0 +1,10 @@
+.admin{
+    min-height: calc(100vh - 11rem);
+}
+
+.admin-card{
+    border: 1px solid var(--clr-text);
+    padding: 3rem 5rem;
+    text-align: center;
+    text-decoration: none;
+}
