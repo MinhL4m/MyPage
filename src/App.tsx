@@ -6,9 +6,10 @@ import { PorfolioContainer } from './components/Porfolio/PorfolioContainer';
 import Nav from './components/common/Nav/Nav';
 import { Footer } from './components/common/Footer/Footer';
 import { BlogContainer } from './components/Blog/BlogList/BlogContainer';
+import {BlogContainer as AdminBlog} from './components/Admin/Blog/BlogContainer'
 import { BlogArticleContainer } from './components/Blog/BlogArticle/BlogArticleContainer';
 import Login from './components/Login/LoginComponent';
-import {Admin} from './components/Admin/Admin'
+import {Admin} from './components/Admin/Admin/Admin'
 
 import { authRef } from './firebase/firebase';
 import NotLoginRoute from './components/common/PrivateRoute/NotLoginRoute';
@@ -33,19 +34,23 @@ function App(props: any) {
 	return (
 		<div className="App">
 			<Nav />
+			
 			<Switch>
-				<Route exact path="/">
+				<Route onUpdate={() => window.scrollTo(0, 0)} exact path="/">
 					<Home />
 				</Route>
-				<Route exact path="/porfolio">
+				<Route onUpdate={() => window.scrollTo(0, 0)} exact path="/porfolio">
 					<PorfolioContainer />
 				</Route>
-				<Route exact path="/blog">
+				<Route onUpdate={() => window.scrollTo(0, 0)} exact path="/blog">
 					<BlogContainer />
 				</Route>
-				<Route exact path ="/blog/:id" children={<BlogArticleContainer/>}></Route>
+				<Route onUpdate={() => window.scrollTo(0, 0)} exact path ="/blog/:id" children={<BlogArticleContainer/>}></Route>
+				
 				<NotLoginRoute Component={Login} path="/login"/>
+				<LoginedRoute Component={AdminBlog} path="/admin/blog"/>
 				<LoginedRoute Component={Admin} path="/admin"/>
+				
 			</Switch>
 			<Footer />
 		</div>

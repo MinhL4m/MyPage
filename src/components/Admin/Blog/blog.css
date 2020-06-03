@@ -1,0 +1,7 @@
+.admin_blog{
+    min-height: calc(100vh - 11rem);
+}
+
+.admin_blog > h1{
+    text-align: center;
+}
