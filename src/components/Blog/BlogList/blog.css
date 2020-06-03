@@ -10,6 +10,11 @@
     width: 100%
 }
 
+.blog-row {
+    margin-bottom: 2rem !important
+}
+
+
 @media (min-width: 768px) {
     .blog {
         min-height: calc(100vh - 11rem);
