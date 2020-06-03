@@ -109,7 +109,7 @@ const Nav: React.FC<{isAuth: boolean, history: any, dispatchLogOut: ()=>void}> =
                                                 <Link to="/">Home</Link>
                                                 <Link to="/porfolio">Porfolio</Link>
                                                 <Link to="/blog">Blog</Link>
-                                                {isAuth?<button className="logout-btn"onClick={logout}>Login</button>:<Link to="/login">Log In</Link>}
+                                                {isAuth?<button className="logout-btn"onClick={logout}>Log Out</button>:<Link to="/login">Log In</Link>}
                                         </div>
                                 </div >
                         </nav >
@@ -119,7 +119,7 @@ const Nav: React.FC<{isAuth: boolean, history: any, dispatchLogOut: ()=>void}> =
                                                 <Link to="/">Home</Link>
                                                 <Link to="/porfolio">Porfolio</Link>
                                                 <Link to="/blog">Blog</Link>
-                                                {isAuth?<button className="logout-btn"onClick={logout}>Login</button>:<Link to="/login">Log In</Link>}
+                                                {isAuth?<button className="logout-btn"onClick={logout}>Log Out</button>:<Link to="/login">Log In</Link>}
                                         </div>
                                         <Icons className="icons" />
                                 </div>
