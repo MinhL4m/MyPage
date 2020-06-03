@@ -20,6 +20,7 @@ function mapStateToProps(state: any) {
 const LoginedRoute: React.FC<LoginedRouteProps> = ({ isAuth, Component, path }) => {
 	return (
 		<Route
+			exact
 			path={path}
 			render={(props: any) => (isAuth ? <Component {...props} /> : <Redirect to="/login" />)}
 		/>
