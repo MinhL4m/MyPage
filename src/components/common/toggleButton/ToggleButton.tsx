@@ -9,30 +9,11 @@ interface ToggleButtonProps {
 
 export const ToggleButton: React.FC<ToggleButtonProps> = ({on = 'Markup', off="Text", onToggle}) => {
 
-	React.useEffect(() => {
-
-        const toggleBody = document.querySelector('.btn-body');
-        const toggleBtn = document.querySelector('.btn-switch');
-
-        function toggleButton(){
-            toggleBody?.classList.toggle('btn-body--on');
-            toggleBtn?.classList.toggle('btn-switch--on');
-            onToggle()
-        }
-
-        toggleBody?.addEventListener('click', toggleButton);
-        return () => {
-            toggleBody?.removeEventListener('click', toggleButton)
-        }
-
-	},[]);
-
 	return (
         <div className="toggle-btn">
             <span>{off}</span>
-            <div className="btn-body">
-                    <div className="btn-switch" />
-            </div>
+            <input type="checkbox" id="toggle_checkbox" onClick={onToggle}/>
+            <label htmlFor="toggle_checkbox"></label>
             <span>{on}</span>
         </div>
 	);

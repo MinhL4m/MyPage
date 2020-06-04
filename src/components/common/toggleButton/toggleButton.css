@@ -1,70 +1,61 @@
 .toggle-btn {
-    display: inline-block;
-    padding: 2rem 0
+    margin: 2rem 0;
 }
 
-.btn-body {
-    display: inline-block;
-    cursor: pointer;
-    width: 3.5rem;
-    height: 2rem;
+#toggle_checkbox {
+    display: none;
+}
+
+label {
     position: relative;
-    background: white;
-    border: 1px solid var(--clr-text);
-    border-radius: 2rem;
-    animation: angle-reverse 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
-    top: 32%;
+    top: 50%;
+    right: 0;
+    left: 0;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
     margin: 0 0.5rem;
+    transform: translateY(10%);
+    cursor: pointer;
 }
 
-.btn-body--on {
-    animation: angle 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
-    animation-direction: alternate;
+label:before {
+    top: 8px;
+    left: 8px;
+    width: 15px;
+    height: 15px;
+    border: 3px solid red;
 }
 
-.btn-switch {
-    width: 1.3rem;
-    height: 1.3rem;
+label:after {
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 30px;
+    border: 3px solid #143240;
+}
+
+label:before,
+label:after {
+    content: "";
     position: absolute;
-    top: calc(49% - 1.4rem / 2);
-    left: calc(28% - 1.4rem / 2);
-    background: white;
-    border-radius: 2rem;
-    background: var(--clr-text);
-    transform: translateX(0);
-    transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    border-radius: 50px;
+    box-sizing: border-box;
+    transition: 0.5s ease top, 0.5s ease left, 0.5s ease right, 0.5s ease width, 0.5s ease height, 0.5s ease border-color;
 }
 
-.btn-switch--on {
-    transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
-    transform: translateX(120%);
-    background: var(--clr-primary-1);
+#toggle_checkbox:checked+label:before {
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 30px;
+    border-color: #143240;
 }
 
-@keyframes angle {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(45deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes angle-reverse {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    50% {
-        transform: rotate(-45deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
+#toggle_checkbox:checked+label:after {
+    top: 8px;
+    right: 8px;
+    width: 15px;
+    height: 15px;
+    border-color: red;
 }
