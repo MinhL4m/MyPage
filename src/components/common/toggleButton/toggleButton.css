@@ -24,7 +24,7 @@ label:before {
     left: 8px;
     width: 15px;
     height: 15px;
-    border: 3px solid red;
+    border: 3px solid var(--clr-primary-1);
 }
 
 label:after {
@@ -32,7 +32,7 @@ label:after {
     right: 0;
     width: 60px;
     height: 30px;
-    border: 3px solid #143240;
+    border: 3px solid var(--clr-text);
 }
 
 label:before,
@@ -49,7 +49,7 @@ label:after {
     left: 0;
     width: 60px;
     height: 30px;
-    border-color: #143240;
+    border-color: var(--clr-text);
 }
 
 #toggle_checkbox:checked+label:after {
@@ -57,5 +57,5 @@ label:after {
     right: 8px;
     width: 15px;
     height: 15px;
-    border-color: red;
+    border-color: var(--clr-primary-1);
 }
