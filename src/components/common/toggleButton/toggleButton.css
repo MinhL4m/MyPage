@@ -1,0 +1,70 @@
+.toggle-btn {
+    display: inline-block;
+    padding: 2rem 0
+}
+
+.btn-body {
+    display: inline-block;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 2rem;
+    position: relative;
+    background: white;
+    border: 1px solid var(--clr-text);
+    border-radius: 2rem;
+    animation: angle-reverse 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    top: 32%;
+    margin: 0 0.5rem;
+}
+
+.btn-body--on {
+    animation: angle 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    animation-direction: alternate;
+}
+
+.btn-switch {
+    width: 1.3rem;
+    height: 1.3rem;
+    position: absolute;
+    top: calc(49% - 1.4rem / 2);
+    left: calc(28% - 1.4rem / 2);
+    background: white;
+    border-radius: 2rem;
+    background: var(--clr-text);
+    transform: translateX(0);
+    transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+}
+
+.btn-switch--on {
+    transition: 1.5s cubic-bezier(0.68, -0.15, 0.265, 1.35);
+    transform: translateX(120%);
+    background: var(--clr-primary-1);
+}
+
+@keyframes angle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes angle-reverse {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
