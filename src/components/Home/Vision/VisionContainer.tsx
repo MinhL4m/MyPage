@@ -12,7 +12,7 @@ export const VisionContainer: React.FC<{}> = () => {
             horizontal: false
         });
         var rellax3 = new Rellax('.rellax3', {
-            speed: 5,
+            speed: 3,
             center: true,
             round: true,
             vertical: true,
