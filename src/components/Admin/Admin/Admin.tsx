@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faUsers, faBlog } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faPlus, faBlog } from '@fortawesome/free-solid-svg-icons';
 import './admin.css';
 
 interface AdminProps {}
@@ -9,11 +9,11 @@ interface AdminProps {}
 export const Admin: React.FC<AdminProps> = ({}) => {
 	return (
 		<div className="admin flex row">
-			<Link to="admin/user" className="col-3 admin-card">
+			<Link to="admin/addblog" className="col-3 admin-card">
 				<h1>
-					<FontAwesomeIcon icon={faUsers} />
+					<FontAwesomeIcon icon={faPlus} />
 				</h1>
-				<h2>User</h2>
+				<h2>Add Blog</h2>
 			</Link>
 			<Link to="admin/blog" className="col-3 admin-card">
 				<h1>
