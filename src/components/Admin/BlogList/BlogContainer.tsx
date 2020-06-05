@@ -20,9 +20,7 @@ function mapStateToProps(state: any) {
 
 const BlogLogic: React.FC<{ blogs: any, loadBlogs:any }> = ({ blogs, loadBlogs}) => {
 	useEffect(() => {
-		if(blogs?.length === 0){
-			loadBlogs()
-		}
+		loadBlogs()
 	}, []);
 
 	return (
