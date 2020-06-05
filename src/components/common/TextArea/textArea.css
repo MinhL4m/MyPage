@@ -1,0 +1,10 @@
+textarea{
+    overflow: hidden;
+    resize: none;
+    width: 100%;
+    border: none;
+}
+
+textarea::placeholder{
+    
+}
