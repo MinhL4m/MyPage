@@ -5,7 +5,8 @@ interface InputProps {
 	onChangeHandler: (ev: any) => void;
 	id: string;
     type: string;
-    label: string;
+	label: string;
+	value:string;
 }
 
 function onInputFocus(ev: any) {
@@ -21,10 +22,10 @@ function onInputBlur(ev: any) {
 }
 
 
-export const Input: React.FC<InputProps> = ({ onChangeHandler, id, type, label }) => {
+export const Input: React.FC<InputProps> = ({ onChangeHandler, id, type, label, value }) => {
 
     React.useEffect(() => {
-		[].slice.call(document.querySelectorAll(`#${id}`)).forEach(function(inputEl: HTMLElement) {
+		[].slice.call(document.querySelectorAll(`#${id}`)).forEach(function(inputEl: any) {
 			inputEl.addEventListener('focus', onInputFocus);
 			inputEl.addEventListener('blur', onInputBlur);
 		});
@@ -37,9 +38,18 @@ export const Input: React.FC<InputProps> = ({ onChangeHandler, id, type, label }
 		};
 	}, []);
 
+	React.useEffect(()=>{
+		[].slice.call(document.querySelectorAll(`#${id}`)).forEach(function(inputEl: any) {
+			if (inputEl.value.trim() !== '') {
+				let targetParentClass = inputEl.parentNode.classList;
+				targetParentClass.add('input--filled');
+			}
+		});
+	})
+
 	return (
 		<span className="input input--nao">
-			<input className="input__field input__field--nao" type={type} id={id} onChange={onChangeHandler} />
+			<input className="input__field input__field--nao" value={value} type={type} id={id} onChange={onChangeHandler} />
 			<label className="input__label input__label--nao" htmlFor={id}>
 				<span className="input__label-content input__label-content--nao">{label}</span>
 			</label>
