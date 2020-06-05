@@ -29,6 +29,10 @@
     margin: 1rem 0;
 }
 
+.article  img{
+    max-width: 100%;
+}
+
 @media (min-width: 1024px) {
     .article {
         margin: 0 auto;
