@@ -6,7 +6,7 @@
     display: none;
 }
 
-label {
+.toogle-label {
     position: relative;
     top: 50%;
     right: 0;
@@ -19,7 +19,7 @@ label {
     cursor: pointer;
 }
 
-label:before {
+.toogle-label:before {
     top: 8px;
     left: 8px;
     width: 15px;
@@ -27,7 +27,7 @@ label:before {
     border: 3px solid var(--clr-primary-1);
 }
 
-label:after {
+.toogle-label:after {
     top: 0;
     right: 0;
     width: 60px;
@@ -35,8 +35,8 @@ label:after {
     border: 3px solid var(--clr-text);
 }
 
-label:before,
-label:after {
+.toogle-label:before,
+.toogle-label:after {
     content: "";
     position: absolute;
     border-radius: 50px;
@@ -44,7 +44,7 @@ label:after {
     transition: 0.5s ease top, 0.5s ease left, 0.5s ease right, 0.5s ease width, 0.5s ease height, 0.5s ease border-color;
 }
 
-#toggle_checkbox:checked+label:before {
+#toggle_checkbox:checked+.toogle-label:before {
     top: 0;
     left: 0;
     width: 60px;
@@ -52,7 +52,7 @@ label:after {
     border-color: var(--clr-text);
 }
 
-#toggle_checkbox:checked+label:after {
+#toggle_checkbox:checked+.toogle-label:after {
     top: 8px;
     right: 8px;
     width: 15px;
