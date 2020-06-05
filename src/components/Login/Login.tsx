@@ -7,16 +7,18 @@ interface LoginProps {
 	passwordOnChange: (ev: any) => void;
 	logIn: (ev: any) => void;
 	error: string;
+	email: string;
+	password: string;
 }
 
-
-const Login: React.FC<LoginProps> = ({ emailOnChange, passwordOnChange, logIn, error }) => {
+const Login: React.FC<LoginProps> = ({ email, password, emailOnChange, passwordOnChange, logIn, error }) => {
 	return (
 		<div className="login">
 			<h2>Login</h2>
 			<form className="login-form">
-				<Input id="email" label="Email" onChangeHandler={emailOnChange} type="text" key="email" />
+				<Input value={email} id="email" label="Email" onChangeHandler={emailOnChange} type="text" key="email" />
 				<Input
+					value={password}
 					id="password"
 					label="Password"
 					onChangeHandler={passwordOnChange}

@@ -44,6 +44,8 @@ const LoginComponent: React.FC<LoginComponentProps> = ({ dispatchLogIn, history 
 	return (
 		<>
 		<Login
+			email={email}
+			password={password}
 			emailOnChange={(ev) => setEmail(ev.target.value)}
 			passwordOnChange={(ev) => {
 				setPassword(ev.target.value);
