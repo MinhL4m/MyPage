@@ -1,0 +1,31 @@
+.blogedit {
+    min-height: calc(100vh - 11rem);
+}
+
+
+.blogedit-btns{
+    display: flex;
+    justify-content: end;
+    align-self: center;
+}
+
+.blogedit-btns >button{
+    font-size: 15px;
+    padding: 0.5rem 0.7rem;
+    margin: 0 2rem;
+    border: none;
+    color: var(--clr-text);
+    background-color: transparent;
+}
+
+.blogedit-btns >button:first-child{
+    border: 2px solid rgb(4, 155, 37)
+}
+
+.blogedit-btns > button:nth-child(2){
+    border: 2px solid var(--clr-primary-1);
+}
+
+.article  img{
+    max-width: 100%;
+}
