@@ -14,7 +14,7 @@ export const Hero: React.FC<{}> = () => {
             <div className="info">
                 <h1>I'm Minh</h1>
                 <h4>Web Developer</h4>
-                <button className="hero-btn" onClick={() => window.open('https://www.google.com')}>
+                <button className="hero-btn" onClick={() => window.location.assign("mailto:minh.lam.dev@gmail.com")}>
                     <span className="l">C</span>
                     <span className="l">O</span>
                     <span className="l">N</span>
