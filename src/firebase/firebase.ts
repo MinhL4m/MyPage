@@ -18,3 +18,4 @@ const db = firebase.firestore()
 export const todoRef = db.collection('todo')
 export const blogRef = db.collection('blog')
 export const authRef = firebase.auth()
+export const timeStamp = firebase.firestore.Timestamp
