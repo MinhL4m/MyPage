@@ -13,7 +13,6 @@ interface Blog {
 
 function mapStateToProps(state: any) {
 	return {
-		todos: state.todo.todos,
 		blogs: state.blog.blogs
 	};
 }
