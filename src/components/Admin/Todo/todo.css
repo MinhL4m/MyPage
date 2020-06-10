@@ -1,0 +1,33 @@
+.todo {}
+
+.todo-add {
+    display: flex;
+}
+
+.todo-btn {
+    padding: 0rem 2rem;
+    margin: 0 2rem;
+    background-color: var(--clr-text);
+    color: var(--clr-primary-3);
+    border: none;
+}
+
+.todo-row {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    border: 1px solid var(--clr-text);
+    margin: 1.5rem 0;
+}
+
+.todo-row>h2 {
+    justify-self: center;
+    align-self: center;
+}
+
+.todo-row-btn {
+    padding: 2rem 1rem;
+    background-color: var(--clr-text);
+    color: var(--clr-primary-3);
+    border: none;
+    font-size: 2rem;
+}
