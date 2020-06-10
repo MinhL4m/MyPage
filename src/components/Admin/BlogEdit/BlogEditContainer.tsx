@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { BlogEdit } from './BlogEdit';
-import { blogRef } from '../../../firebase/firebase';
+import { blogRef, timeStamp } from '../../../firebase/firebase';
 
 interface BlogEditContainerProps {
 	match: any;
@@ -31,7 +31,8 @@ const BlogEditContainer: React.FC<BlogEditContainerProps> = ({ match, history })
 			.doc(match.params.id)
 			.set({
 				title: title,
-				content: content
+				content: content,
+				date: timeStamp.fromDate(new Date())
 			})
 			.then(() => {
 				history.push('/admin/blog')
