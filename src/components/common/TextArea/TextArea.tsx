@@ -7,7 +7,7 @@ interface TextAreaProps {
 	onChangeHandler: (ev: any) => void;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({value, onChangeHandler}) => {
+export const TextArea: React.FC<TextAreaProps> = ({ value, onChangeHandler }) => {
 	React.useEffect(() => {
 		const textArea = document.querySelector('.text-area')
 		autosize(textArea)
@@ -21,9 +21,9 @@ export const TextArea: React.FC<TextAreaProps> = ({value, onChangeHandler}) => {
 
 	return (
 		<>
-			
+
 			<div>
-				<textarea id="text-area" autoFocus={true} className="text-area" placeholder="Write blog body here" value={value} onChange={onChangeHandler}/>
+				<textarea id="text-area" autoFocus={true} className="text-area" placeholder="Write blog body here" value={value} onChange={onChangeHandler} />
 			</div>
 		</>
 	);
