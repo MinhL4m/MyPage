@@ -1,36 +1,82 @@
 .center {
-    margin: 0 auto;
-    width: 50%;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .img {
-    max-width: 50%;
-    clip-path: circle(48%);
-    text-align: center;
-    background-color: var(--clr-primary-2);
-    margin-bottom: 1rem;
+  max-width: 50%;
+  clip-path: circle(48%);
+  text-align: center;
+  background-color: var(--clr-primary-2);
+  margin-bottom: 1rem;
 }
-
-
 
 .self-img {
-    width: 60%;
+  width: 60%;
+  transform: translateY(10%);
+}
+
+.appear-self-img {
+  animation: appearSelfImg 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.about_description > p {
+  margin: 2rem 0;
+}
+
+.about-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-btn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  color: var(--clr-text);
+  border: 3px solid var(--clr-primary-1);
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.about-btn span {
+  transition: 2s all;
+}
+
+.about-btn:hover span {
+  color: var(--clr-primary-3);
+}
+
+.about-btn::after {
+  content: "";
+  background-color: var(--clr-primary-1);
+  width: 110%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(100%);
+  transition: 0.8s all;
+}
+
+.about-btn:hover::after {
+  transform: translateY(0%);
+}
+
+@keyframes appearSelfImg {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
     transform: translateY(10%);
+  }
 }
 
-.appear-self-img{
-    animation: appearSelfImg 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-}
-
-.about_description > p{
-    margin: 2rem 0;
-}
-
-@keyframes appearSelfImg{
-    0%{
-        transform: translateY(100%);
-    }
-    100%{
-        transform: translateY(10%);
-    }
+@media (min-width: 768px) {
+  .about-btn-container {
+    display: block;
+  }
 }
