@@ -1,29 +1,36 @@
 .porfolio-card {
-    border: 1px solid var(--clr-text);
-    overflow: hidden;
+  border: 1px solid var(--clr-text);
+  overflow: hidden;
 }
 
-.porfolio-img{
-    height: 260px;
-    width: 100%;
-    background-size: cover;
-    background-position: top center;
-    transition: all 2s ease-in-out;
+.porfolio-img {
+  height: 260px;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  transition: all 2s ease-in-out;
 }
 
-.porfolio-card:hover   .porfolio-img{
-    background-position: bottom center;
+.porfolio-card:hover .porfolio-img {
+  background-position: bottom center;
 }
 
-.porfolio-content{
-    padding: 2rem 0 2rem 1rem;
+.porfolio-content {
+  padding: 2rem 1rem 2rem 1rem;
 }
 
-.porfolio-card > a{
-    text-decoration: none;
+.porfolio-card > a {
+  text-decoration: none;
 }
 
-.porfolio-description{
-    font-size: 1rem;
-    color: rgba(75,75,75,0.7);
+.porfolio-description {
+  font-size: 1rem;
+  color: rgba(75, 75, 75, 0.7);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
